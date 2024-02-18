@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Auth.RegisterActivity">
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email" />
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:hint="Name" />
+
+    <EditText
+        android:id="@+id/etStationName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:hint="Station Name" />
+
+    <EditText
+        android:id="@+id/etChargingPoints"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:hint="Charging Points" />
+
+    <EditText
+        android:id="@+id/etPricing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:hint="Pricing" />
+
+    <Button
+        android:id="@+id/btnComType1"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="ComType1" />
+
+    <Button
+        android:id="@+id/btnComType2"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="ComType2" />
+
+    <Button
+        android:id="@+id/btnComType3"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="ComType3" />
+
+    <EditText
+        android:id="@+id/etPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:hint="Password" />
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Register" />
+
+</LinearLayout>

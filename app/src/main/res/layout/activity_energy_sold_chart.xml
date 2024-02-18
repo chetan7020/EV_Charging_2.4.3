@@ -4,33 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cl_faint_green"
-    android:gravity="center"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".EnergySold.EnergySoldChartActivity">
 
     <Button
-        android:id="@+id/btnManageEV"
-        android:layout_width="150dp"
+        android:id="@+id/btnAmount"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Manage EV Points" />
+        android:text="Add Amount" />
 
     <Button
-        android:id="@+id/btnProfile"
+        android:id="@+id/btnEnergySold"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:text="Profile" />
+        android:text="Energy Sold" />
 
     <Button
-        android:id="@+id/btnGetAllReview"
+        android:id="@+id/btnUserServed"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:text="Review" />
+        android:text="User Served" />
 
-    <Button
-        android:id="@+id/btnPaymentHistory"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:text="Payment History" />
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/lcChat"
+        android:layout_width="match_parent"
+        android:layout_height="300dp" />
 
 </LinearLayout>

@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cl_faint_green"
+    tools:context=".payment.ViewAllPaymentsActivity">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/cl_faint_green" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:paddingTop="10dp"
+                android:text="Payments"
+                android:textColor="@color/white"
+                android:textSize="25dp" />
+
+
+        </RelativeLayout>
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/shape"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="30dp">
+
+                    <TextView
+                        android:id="@+id/greeting"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="MY BALANCE"
+                        android:textColor="@color/white"
+                        android:textSize="18dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginRight="10dp"
+                            android:src="@drawable/baseline_currency_rupee_24" />
+
+                        <TextView
+                            android:id="@+id/greeter_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/greeting"
+                            android:fontFamily="@font/poppins_bold"
+                            android:text="200"
+                            android:textColor="@color/cl_green"
+                            android:textSize="35dp" />
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="20dp"
+                    app:dividerColor="@color/grey" />
+
+                <TextView
+                    android:id="@+id/text_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Payment History"
+                    android:textColor="@color/white"
+                    android:textSize="22dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="60dp"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/edittext_background"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:padding="15dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <com.google.android.material.imageview.ShapeableImageView
+                                    android:id="@+id/avatar_img"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:src="@drawable/payement_avatar"
+                                    app:shapeAppearanceOverlay="@style/ImageView.Round" />
+
+                                <TextView
+                                    android:id="@+id/user_name"
+                                    android:layout_width="200dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toRightOf="@id/avatar_img"
+                                    android:fontFamily="@font/poppins"
+                                    android:maxLines="1"
+                                    android:paddingLeft="10dp"
+                                    android:text="Rohit Nandagawali"
+                                    android:textColor="@color/white"
+                                    android:textSize="17dp" />
+
+                                <TextView
+                                    android:id="@+id/payment_time"
+                                    android:layout_width="200dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/user_name"
+                                    android:layout_toRightOf="@id/avatar_img"
+                                    android:fontFamily="@font/poppins"
+                                    android:paddingLeft="10dp"
+                                    android:text="18 February 2024 at 12:10 AM"
+                                    android:textColor="@color/cl_faint_green"
+                                    android:textSize="12dp" />
+
+
+                                <TextView
+                                    android:id="@+id/payment_money"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="+200"
+                                    android:textColor="@color/cl_green"
+                                    android:textSize="19dp" />
+
+                                <TextView
+                                    android:id="@+id/payment_status"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/payment_money"
+                                    android:layout_alignParentRight="true"
+                                    android:fontFamily="@font/poppins"
+                                    android:text="success"
+                                    android:textColor="@color/cl_green"
+                                    android:textSize="15dp" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <!--                    failed payment-->
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/edittext_background"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:padding="15dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <com.google.android.material.imageview.ShapeableImageView
+                                    android:id="@+id/avatar_img1"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:src="@drawable/payement_avatar"
+                                    app:shapeAppearanceOverlay="@style/ImageView.Round" />
+
+                                <TextView
+                                    android:id="@+id/user_name1"
+                                    android:layout_width="200dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toRightOf="@id/avatar_img1"
+                                    android:fontFamily="@font/poppins"
+                                    android:maxLines="1"
+                                    android:paddingLeft="10dp"
+                                    android:text="Lord Mkk"
+                                    android:textColor="@color/white"
+                                    android:textSize="17dp" />
+
+                                <TextView
+                                    android:id="@+id/payment_time1"
+                                    android:layout_width="200dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/user_name1"
+                                    android:layout_toRightOf="@id/avatar_img1"
+                                    android:fontFamily="@font/poppins"
+                                    android:paddingLeft="10dp"
+                                    android:text="18 February 2024 at 12:10 AM"
+                                    android:textColor="@color/cl_faint_green"
+                                    android:textSize="12dp" />
+
+
+                                <TextView
+                                    android:id="@+id/payment_money1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="+200"
+                                    android:textColor="@color/cl_red"
+                                    android:textSize="19dp" />
+
+                                <TextView
+                                    android:id="@+id/payment_status1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/payment_money1"
+                                    android:layout_alignParentRight="true"
+                                    android:fontFamily="@font/poppins"
+                                    android:text="failed"
+                                    android:textColor="@color/cl_red"
+                                    android:textSize="15dp" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
