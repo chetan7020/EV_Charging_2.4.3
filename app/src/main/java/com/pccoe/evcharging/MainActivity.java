@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.pccoe.evcharging.EnergySold.EnergySoldChartActivity;
 import com.pccoe.evcharging.EvStation.GetEvStationsActivity;
 import com.pccoe.evcharging.EvStation.UpdateEvStationActivity;
 import com.pccoe.evcharging.databinding.ActivityMainBinding;
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         binding.btnManageEV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, GetEvStationsActivity.class));
+                startActivity(new Intent(MainActivity.this, UpdateEvStationActivity.class));
             }
         });
 
@@ -54,6 +55,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, ViewAllPaymentsActivity.class));
+            }
+        });
+
+        binding.btnAnalytics.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, EnergySoldChartActivity.class));
             }
         });
     }

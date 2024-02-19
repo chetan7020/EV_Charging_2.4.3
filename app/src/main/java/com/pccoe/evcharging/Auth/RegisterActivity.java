@@ -2,16 +2,23 @@ package com.pccoe.evcharging.Auth;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.ResultReceiver;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -21,6 +28,7 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.GeoPoint;
 import com.google.firebase.firestore.WriteBatch;
+import com.google.type.LatLng;
 import com.pccoe.evcharging.MainActivity;
 import com.pccoe.evcharging.databinding.ActivityRegisterBinding;
 import com.pccoe.evcharging.models.EVStation;
@@ -30,7 +38,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -71,26 +81,6 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
-        binding.btnComType1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mani_com_type_1 = 1 - mani_com_type_1;
-            }
-        });
-
-        binding.btnComType2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mani_com_type_2 = 1 - mani_com_type_2;
-            }
-        });
-
-        binding.btnComType3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mani_com_type_3 = 1 - mani_com_type_3;
-            }
-        });
     }
 
     private void createNew() {
@@ -189,7 +179,6 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void getText() {
-        //price = charging_point_com_type_1 = charging_point_com_type_2 = charging_point_com_type_3 = 0;
         owner_id = UUID.randomUUID().toString();
 
         owner_email = binding.etEmail.getText().toString().trim();
@@ -197,20 +186,26 @@ public class RegisterActivity extends AppCompatActivity {
         owner_name = binding.etName.getText().toString().trim();
         ev_station_name = binding.etStationName.getText().toString().trim();
 
-//        Log.d("RA", binding.etChargingPoints.toString().trim());
-
-//        Log.d("TAG", binding.etChargingPoints.toString().trim());
-
         charging_points = Integer.parseInt(binding.etChargingPoints.getText().toString().trim());
         price = Integer.parseInt(binding.etPricing.getText().toString().trim());
+
+        if (binding.cbT1.isChecked()) {
+            mani_com_type_1 = 1;
+        }
+
+        if (binding.cbT2.isChecked()) {
+            mani_com_type_2 = 1;
+        }
+
+        if (binding.cbT3.isChecked()) {
+            mani_com_type_3 = 1;
+        }
+
         charging_point_com_type_1 = mani_com_type_1;
         charging_point_com_type_2 = mani_com_type_2;
         charging_point_com_type_3 = mani_com_type_3;
 
-//        getLatLang("");
         owner_location = new GeoPoint(-20, 20);
-
-//        avg_rating = 0;
 
         if (owner_email.equals("")) owner_email = "-1";
         if (owner_pass.equals("")) owner_pass = "-1";

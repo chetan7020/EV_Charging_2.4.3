@@ -48,7 +48,6 @@ public class GetAllReveiwsActivity extends AppCompatActivity {
 
         ratings = new ArrayList<>();
 
-//        recyclerView = findViewById(R.id.rvData);
         layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(RecyclerView.VERTICAL);
         binding.rvData.setLayoutManager(layoutManager);

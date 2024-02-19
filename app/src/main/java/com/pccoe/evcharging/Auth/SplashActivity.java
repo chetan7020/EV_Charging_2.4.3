@@ -16,6 +16,7 @@ public class SplashActivity extends AppCompatActivity {
     private ActivitySplashBinding binding;
     private FirebaseAuth firebaseAuth;
     private FirebaseFirestore firebaseFirestore;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,23 +30,23 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
     }
 
-    private void init(){
+    private void init() {
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
     }
 
     private void checkLoginStatus() {
-        if(firebaseAuth.getCurrentUser()!=null){
-            startActivity(new Intent(SplashActivity.this, MainActivity.class));
-            finish();
-        }else{
-            new Handler().postDelayed(new Runnable() {
-                public void run() {
-                    startActivity(new Intent(SplashActivity.this, RegisterActivity.class));
+        new Handler().postDelayed(new Runnable() {
+            public void run() {
+                if (firebaseAuth.getCurrentUser() != null) {
+                    startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                    finish();
+                } else {
+                    startActivity(new Intent(SplashActivity.this, LoginActivity.class));
                     finish();
                 }
-            }, 1000);
-        }
+            }
+        }, 1000);
     }
 
 }

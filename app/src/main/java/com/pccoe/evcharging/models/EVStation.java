@@ -13,6 +13,10 @@ public class EVStation {
     public EVStation() {
     }
 
+    public EVStation(List<Integer> slot) {
+        this.slot = slot;
+    }
+
     public EVStation(String evs_id, List<Integer> slot) {
         this.evs_id = evs_id;
         this.evs_available = 0;

@@ -34,6 +34,10 @@ public class EnergySoldChartActivity extends AppCompatActivity {
 
         init();
 
+        setEventList();
+
+        setChartData();
+
         setContentView(binding.getRoot());
     }
 

@@ -49,9 +49,14 @@
                         android:textColor="@color/white"
                         android:textSize="17dp" />
 
+                    <TextView
+                        android:id="@+id/tvID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"/>
 
                     <TextView
-                        android:id="@+id/distance"
+                        android:id="@+id/tvAvailable"
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/station_name"
@@ -63,10 +68,10 @@
                         android:textSize="12sp" />
 
                     <TextView
-                        android:id="@+id/distance2"
+                        android:id="@+id/tvEnergy"
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/distance"
+                        android:layout_below="@id/tvAvailable"
                         android:layout_toRightOf="@id/avatar_img"
                         android:fontFamily="@font/poppins"
                         android:paddingLeft="10dp"
