@@ -1,6 +1,7 @@
 package com.pccoe.evcharging.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.pccoe.evcharging.EvStation.UpdateEvStationActivity;
 import com.pccoe.evcharging.R;
 import com.pccoe.evcharging.models.EVStation;
 import com.pccoe.evcharging.models.Rating;
@@ -50,6 +52,18 @@ public class EVStationAdapter extends RecyclerView.Adapter<EVStationAdapter.Lead
     @Override
     public void onBindViewHolder(@NonNull LeadData holder, int position) {
 
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(context, UpdateEvStationActivity.class);
+
+                intent.putExtra("evs_id", dataholder2.get(position).getEvs_id());
+
+                context.startActivity(intent);
+            }
+        });
+
 //        holder.ratingBar.setRating((float) dataholder2.get(position).getRat_rating());
         holder.tvID.setText(dataholder2.get(position).getEvs_id());
         if(dataholder2.get(position).getEvs_available()==1){
@@ -57,8 +71,7 @@ public class EVStationAdapter extends RecyclerView.Adapter<EVStationAdapter.Lead
         }else{
             holder.tvAvailable.setText("Not Available");
         }
-        holder.tvEnergy.setText(dataholder2.get(position).getEvs_energy());
-//        holder.tvDate.setText(dataholder2.get(position).getRat_date());
+        holder.tvEnergy.setText(Integer.toString(dataholder2.get(position).getEvs_energy()));
     }
 
     @Override
@@ -72,6 +85,8 @@ public class EVStationAdapter extends RecyclerView.Adapter<EVStationAdapter.Lead
 //        RatingBar ratingBar;
         TextView tvID, tvAvailable, tvEnergy;
 
+        CardView cardView;
+
 
         public LeadData(@NonNull View itemView) {
             super(itemView);
@@ -80,6 +95,8 @@ public class EVStationAdapter extends RecyclerView.Adapter<EVStationAdapter.Lead
             tvID = itemView.findViewById(R.id.tvID);
             tvAvailable = itemView.findViewById(R.id.tvAvailable);
             tvEnergy = itemView.findViewById(R.id.tvEnergy);
+
+            cardView = itemView.findViewById(R.id.cv);
 //            tvDate = itemView.findViewById(R.id.tvDate);
         }
     }

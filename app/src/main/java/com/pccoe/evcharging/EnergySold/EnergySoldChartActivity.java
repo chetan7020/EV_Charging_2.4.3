@@ -1,22 +1,32 @@
 package com.pccoe.evcharging.EnergySold;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.pccoe.evcharging.databinding.ActivityEnergySoldChartBinding;
+import com.pccoe.evcharging.models.EnergySold;
+import com.pccoe.evcharging.models.Payment;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class EnergySoldChartActivity extends AppCompatActivity {
 
+
+    List<Payment> list = new ArrayList<>();
     private ActivityEnergySoldChartBinding binding;
     private int mani_amount, mani_energy_sold, mani_user_served;
     private ArrayList<Entry> amount, energy_sold, user_served;
@@ -36,7 +46,7 @@ public class EnergySoldChartActivity extends AppCompatActivity {
 
         setEventList();
 
-        setChartData();
+        getDataFromFirebase();
 
         setContentView(binding.getRoot());
     }
@@ -109,10 +119,47 @@ public class EnergySoldChartActivity extends AppCompatActivity {
         mani_user_served = 1 - mani_user_served;
     }
 
+    private void getDataFromFirebase(){
+        firebaseFirestore
+                .collection("Owner")
+                .document(firebaseAuth.getCurrentUser().getEmail())
+                .collection("Payments")
+                .get()
+                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                    @Override
+                    public void onSuccess(QuerySnapshot snaps) {
+                        if(snaps==null) return;
+
+                        list.addAll(snaps.toObjects(Payment.class));
+
+                        setChartData();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+
+                    }
+                });
+    }
+
     private void setChartData() {
+
         dataValues_amount();
-        dataValues_energy_sold();
         dataValues_user_served();
+        dataValues_energy_sold();
+
+        for(Payment i : list){
+
+//            Toast.makeText(this, ""+ i.getPayment_from_name(), Toast.LENGTH_SHORT).show();
+            int month = Integer.parseInt(i.getPayment_date().substring(5, 7));
+            int amt = i.getPayment_energy_sold()*i.getPayment_amount();
+            amount.set( month-1, new Entry(month, amt) );
+            energy_sold.set( month-1, new Entry(month, i.getPayment_energy_sold()) );
+
+            int sv = (int) user_served.get(month-1).getY()+1;
+
+            user_served.set( month-1, new Entry(month, sv) );
+        }
 
         //Amount
         if (amount == null) return;
@@ -139,52 +186,52 @@ public class EnergySoldChartActivity extends AppCompatActivity {
     private void dataValues_amount() {
         amount = new ArrayList<>();
 
-        amount.add(new Entry(1, 20));
-        amount.add(new Entry(2, 100));
-        amount.add(new Entry(3, 200));
-        amount.add(new Entry(4, 10));
-        amount.add(new Entry(5, 80));
-        amount.add(new Entry(6, 180));
-        amount.add(new Entry(7, 200));
-        amount.add(new Entry(8, 25));
-        amount.add(new Entry(9, 75));
-        amount.add(new Entry(10, 110));
-        amount.add(new Entry(11, 230));
-        amount.add(new Entry(12, 390));
+        amount.add(new Entry(1, 0));
+        amount.add(new Entry(2, 0));
+        amount.add(new Entry(3, 0));
+        amount.add(new Entry(4, 0));
+        amount.add(new Entry(5, 0));
+        amount.add(new Entry(6, 0));
+        amount.add(new Entry(7, 0));
+        amount.add(new Entry(8, 0));
+        amount.add(new Entry(9, 0));
+        amount.add(new Entry(10, 0));
+        amount.add(new Entry(11, 0));
+        amount.add(new Entry(12, 0));
     }
 
     private void dataValues_energy_sold() {
         energy_sold = new ArrayList<>();
 
-        energy_sold.add(new Entry(1, 200));
-        energy_sold.add(new Entry(2, 10));
-        energy_sold.add(new Entry(3, 230));
-        energy_sold.add(new Entry(4, 390));
-        energy_sold.add(new Entry(5, 20));
-        energy_sold.add(new Entry(6, 80));
-        energy_sold.add(new Entry(7, 180));
-        energy_sold.add(new Entry(8, 300));
-        energy_sold.add(new Entry(9, 25));
-        energy_sold.add(new Entry(10, 75));
-        energy_sold.add(new Entry(11, 110));
-        energy_sold.add(new Entry(12, 100));
+        energy_sold.add(new Entry(1, 0));
+        energy_sold.add(new Entry(2, 0));
+        energy_sold.add(new Entry(3, 0));
+        energy_sold.add(new Entry(4, 0));
+        energy_sold.add(new Entry(5, 0));
+        energy_sold.add(new Entry(6, 0));
+        energy_sold.add(new Entry(7, 0));
+        energy_sold.add(new Entry(8, 0));
+        energy_sold.add(new Entry(9, 0));
+        energy_sold.add(new Entry(10, 0));
+        energy_sold.add(new Entry(11, 0));
+        energy_sold.add(new Entry(12, 0));
     }
 
     private void dataValues_user_served() {
         user_served = new ArrayList<>();
 
-        user_served.add(new Entry(1, 110));
-        user_served.add(new Entry(2, 10));
-        user_served.add(new Entry(3, 180));
-        user_served.add(new Entry(4, 20));
-        user_served.add(new Entry(5, 100));
-        user_served.add(new Entry(6, 80));
-        user_served.add(new Entry(7, 200));
-        user_served.add(new Entry(8, 230));
-        user_served.add(new Entry(9, 390));
-        user_served.add(new Entry(10, 25));
-        user_served.add(new Entry(11, 290));
-        user_served.add(new Entry(12, 30));
+        user_served.add(new Entry(1, 0));
+        user_served.add(new Entry(2, 0));
+        user_served.add(new Entry(3, 0));
+        user_served.add(new Entry(4, 0));
+        user_served.add(new Entry(5, 0));
+        user_served.add(new Entry(6, 0));
+        user_served.add(new Entry(7, 0));
+        user_served.add(new Entry(8, 0));
+        user_served.add(new Entry(9, 0));
+        user_served.add(new Entry(10, 0));
+        user_served.add(new Entry(11, 0));
+        user_served.add(new Entry(12, 0));
     }
 
     private void init() {

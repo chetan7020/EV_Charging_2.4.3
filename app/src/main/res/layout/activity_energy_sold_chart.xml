@@ -4,30 +4,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/cl_black"
+    android:gravity="center"
     android:orientation="vertical"
     tools:context=".EnergySold.EnergySoldChartActivity">
-
-    <Button
-        android:id="@+id/btnAmount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add Amount" />
-
-    <Button
-        android:id="@+id/btnEnergySold"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:text="Energy Sold" />
-
-    <Button
-        android:id="@+id/btnUserServed"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:text="User Served" />
 
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/lcChat"
         android:layout_width="match_parent"
         android:layout_height="300dp" />
+
+    <TextView
+        android:id="@+id/type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/poppins"
+        android:singleLine="true"
+        android:text="Select the filter which you wnat to apply"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp">
+
+        <CheckBox
+            android:id="@+id/btnAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Amount"
+            android:textColor="@color/white" />
+
+        <CheckBox
+            android:id="@+id/btnEnergySold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Energy Sold"
+            android:textColor="@color/white" />
+
+        <CheckBox
+            android:id="@+id/btnUserServed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User Served"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
 
 </LinearLayout>

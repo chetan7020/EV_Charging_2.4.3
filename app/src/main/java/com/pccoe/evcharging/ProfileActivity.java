@@ -3,9 +3,11 @@ package com.pccoe.evcharging;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -13,6 +15,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.pccoe.evcharging.Auth.LoginActivity;
 import com.pccoe.evcharging.databinding.ActivityProfileBinding;
 import com.pccoe.evcharging.models.Owner;
 
@@ -36,6 +39,14 @@ public class ProfileActivity extends AppCompatActivity {
         init();
 
         getData();
+
+        binding.btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                firebaseAuth.signOut();
+                startActivity(new Intent(ProfileActivity.this, LoginActivity.class));
+            }
+        });
 
         setContentView(binding.getRoot());
     }

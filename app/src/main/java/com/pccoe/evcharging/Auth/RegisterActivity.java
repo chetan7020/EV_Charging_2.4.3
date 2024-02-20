@@ -93,7 +93,7 @@ public class RegisterActivity extends AppCompatActivity {
                         firebaseFirestore
                                 .collection("Owner")
                                 .document(owner_email)
-                                .set(new Owner(owner_id, owner_email, owner_name, ev_station_name, avg_rating, owner_location, charging_points, price, charging_point_com_type_1, charging_point_com_type_2, charging_point_com_type_3, reviews))
+                                .set(new Owner(owner_id, owner_email, owner_name, ev_station_name, avg_rating, owner_location, charging_points, price, charging_point_com_type_1, charging_point_com_type_2, charging_point_com_type_3, reviews, 0))
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void unused) {
@@ -119,7 +119,7 @@ public class RegisterActivity extends AppCompatActivity {
     private void addChargingPoints() {
         WriteBatch batch = firebaseFirestore.batch();
 
-        List<Integer> slot = new ArrayList<>(Collections.nCopies(48, 0));
+        List<String> slot = new ArrayList<>(Collections.nCopies(48, ""));
 
         for (int i = 0; i < charging_points; i++) {
 

@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         binding.btnManageEV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, UpdateEvStationActivity.class));
+                startActivity(new Intent(MainActivity.this, GetEvStationsActivity.class));
             }
         });
 

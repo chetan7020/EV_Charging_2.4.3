@@ -77,7 +77,7 @@ public class AddEVStationActivity extends AppCompatActivity {
 
     private void addEVStation() {
 
-        List<Integer> slot = new ArrayList<>(Collections.nCopies(48, 0));
+        List<String> slot = new ArrayList<>(Collections.nCopies(48, ""));
 
         firebaseFirestore
                 .collection("Owner")

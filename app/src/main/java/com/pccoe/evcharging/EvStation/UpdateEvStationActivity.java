@@ -38,7 +38,7 @@ public class UpdateEvStationActivity extends AppCompatActivity {
 
         binding = ActivityUpdateEvStationBinding.inflate(getLayoutInflater());
 
-        evs_id = "56349bac-72e8-4c81-be11-10f4912b9043";
+        evs_id = getIntent().getStringExtra("evs_id");
 
         init();
 
@@ -128,7 +128,7 @@ public class UpdateEvStationActivity extends AppCompatActivity {
                 .collection("Owner")
                 .document(firebaseAuth.getCurrentUser().getEmail())
                 .collection("EV_Station")
-                .document("4235d64c-b270-4221-bc48-93f47f13aa2f")
+                .document(evs_id)
                 .get()
                 .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
@@ -138,6 +138,28 @@ public class UpdateEvStationActivity extends AppCompatActivity {
                         if (evs == null) return;
 
                         previous_energy = evs.getEvs_available();
+
+                        type = evs.getType();
+
+                        if(type!=0){
+                            if(type==1){
+                                binding.btnType1.setChecked(true);
+                            }
+                            if(type==2){
+                                binding.btnType2.setChecked(true);
+                            }
+                            if(type==3){
+                                binding.btnType3.setChecked(true);
+                            }
+                        }
+
+                        evs_available = evs.getEvs_available();
+
+                        if(evs_available==1){
+                            binding.btnAvailable.setChecked(true);
+                        }else{
+                            binding.btnAvailable.setChecked(false);
+                        }
 
                         binding.etEmail.setText(Integer.toString(evs.getEvs_energy()));
 //                        binding.etAvailable.setText(Integer.toString(previous_energy));

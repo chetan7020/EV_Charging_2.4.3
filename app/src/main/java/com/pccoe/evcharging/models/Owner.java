@@ -8,12 +8,12 @@ public class Owner implements Serializable {
     String owner_id, owner_email, owner_name, ev_station_name;
     double avg_rating;
     private GeoPoint owner_location;
-    int charging_points, price, charging_point_com_type_1, charging_point_com_type_2, charging_point_com_type_3, reviews;
+    int charging_points, price, charging_point_com_type_1, charging_point_com_type_2, charging_point_com_type_3, reviews, amount_earned;
 
     public Owner() {
     }
 
-    public Owner(String owner_id, String owner_email, String owner_name, String ev_station_name, double avg_rating, GeoPoint owner_location, int charging_points, int price, int charging_point_com_type_1, int charging_point_com_type_2, int charging_point_com_type_3, int reviews) {
+    public Owner(String owner_id, String owner_email, String owner_name, String ev_station_name, double avg_rating, GeoPoint owner_location, int charging_points, int price, int charging_point_com_type_1, int charging_point_com_type_2, int charging_point_com_type_3, int reviews, int amount_earned) {
         this.owner_id = owner_id;
         this.owner_email = owner_email;
         this.owner_name = owner_name;
@@ -26,6 +26,7 @@ public class Owner implements Serializable {
         this.charging_point_com_type_2 = charging_point_com_type_2;
         this.charging_point_com_type_3 = charging_point_com_type_3;
         this.reviews = reviews;
+        this.amount_earned = amount_earned;
     }
 
     public String getOwner_id() {
@@ -122,5 +123,13 @@ public class Owner implements Serializable {
 
     public void setReviews(int reviews) {
         this.reviews = reviews;
+    }
+
+    public int getAmount_earned() {
+        return amount_earned;
+    }
+
+    public void setAmount_earned(int amount_earned) {
+        this.amount_earned = amount_earned;
     }
 }
