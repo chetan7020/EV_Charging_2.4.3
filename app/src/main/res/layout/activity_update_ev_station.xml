@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Update EV Station"
+        android:text="@string/update_ev_station"
         android:textColor="@color/cl_green"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:fontFamily="@font/poppins_medium"
-        android:text="Please fill out the form below to \nupdate EV station information"
+        android:text="@string/please_fill_out_the_form_below_to_nupdate_ev_station_information"
         android:textColor="@color/cl_faint_green"
         android:textSize="10sp"
 
@@ -40,8 +40,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins"
         android:singleLine="true"
-        android:text="Energy (watts)"
-        android:textAllCaps="true"
+        android:text="@string/energy_kilowatts"
         android:textColor="@color/cl_faint_green"
         android:textSize="8sp"
         android:textStyle="bold" />
@@ -53,7 +52,7 @@
         android:layout_marginBottom="20dp"
         android:background="@drawable/edittext_background"
         android:fontFamily="@font/poppins_medium"
-        android:hint=" ex. 125.00"
+        android:hint="@string/ex_125_00"
         android:inputType="numberDecimal"
         android:padding="12dp"
         android:singleLine="true"
@@ -68,7 +67,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins"
         android:singleLine="true"
-        android:text="Is this EV station currently available?"
+        android:text="@string/is_this_ev_station_currently_available"
         android:textAllCaps="true"
         android:textColor="@color/cl_faint_green"
         android:textSize="8sp"
@@ -87,7 +86,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:fontFamily="@font/poppins"
-            android:text="Unavailable"
+            android:text="@string/unavailable"
             android:textAlignment="center"
             android:textColor="@color/grey"
             android:textSize="12sp"
@@ -112,7 +111,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginBottom="10dp"
             android:fontFamily="@font/poppins"
-            android:text="Available"
+            android:text="@string/available"
             android:textAlignment="center"
             android:textColor="@color/cl_faint_green"
             android:textSize="12sp"
@@ -128,7 +127,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins"
         android:singleLine="true"
-        android:text="Select the charging connector type"
+        android:text="@string/select_the_charging_connector_type"
         android:textAllCaps="true"
         android:textColor="@color/cl_faint_green"
         android:textSize="8sp"
@@ -146,8 +145,7 @@
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:buttonTint="@color/cl_faint_green"
-
-            android:text="1"
+            android:text="@string/_1"
             android:textColor="@color/cl_faint_green"
             android:textSize="16sp" />
 
@@ -157,7 +155,7 @@
             android:layout_height="48dp"
             android:layout_marginStart="16dp"
             android:buttonTint="@color/cl_faint_green"
-            android:text="2"
+            android:text="@string/_2"
             android:textColor="@color/cl_faint_green"
             android:textSize="16sp" />
 
@@ -167,7 +165,7 @@
             android:layout_height="48dp"
             android:layout_marginStart="16dp"
             android:buttonTint="@color/cl_faint_green"
-            android:text="3"
+            android:text="@string/_3"
             android:textColor="@color/cl_faint_green"
             android:textSize="16sp" />
     </RadioGroup>
@@ -182,7 +180,7 @@
         android:backgroundTint="@null"
         android:fontFamily="@font/poppins_semibold"
         android:padding="10dp"
-        android:text="Update"
+        android:text="@string/update"
         android:textAllCaps="false"
         android:textSize="17dp" />
 

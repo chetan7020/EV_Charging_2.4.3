@@ -12,7 +12,7 @@
     <ImageView
         android:id="@+id/bannerImageView"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="120dp"
         android:scaleType="centerCrop"
         android:src="@drawable/gradient"/>
 
@@ -32,7 +32,7 @@
         android:layout_marginEnd="232dp"
 
         android:src="@drawable/payement_avatar"
-        app:shapeAppearanceOverlay="@style/ImageView.Round" />
+        app:shapeAppearanceOverlay="@style/ImageView.roundedRectangle" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -48,7 +48,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_medium"
-            android:text="John Doe"
             android:textColor="@color/cl_green"
             android:textSize="26sp"
             android:singleLine="true"
@@ -81,7 +80,6 @@
                 android:background="@drawable/edittext_background"
                 android:fontFamily="@font/poppins"
                 android:padding="15sp"
-                android:text="john.doe@example.com"
                 android:singleLine="true"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
@@ -113,7 +111,6 @@
                 android:background="@drawable/edittext_background"
 
                 android:padding="15sp"
-                android:text="Station Name"
                 android:singleLine="true"
                 android:fontFamily="@font/poppins"
                 android:textColor="@color/white"
@@ -180,7 +177,6 @@
                 android:singleLine="false"
                 android:lines="4"
                 android:padding="15sp"
-                android:text="123 Mainn Street, city, Country"
                 android:textColor="@color/white"
                 android:background="@drawable/edittext_background"
                 android:textStyle="bold" />
@@ -188,10 +184,58 @@
 
         </LinearLayout>
 
+
+
+        <RadioGroup
+            android:id="@+id/rg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/btnType1"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:buttonTint="@color/cl_faint_green"
+                android:text="@string/english"
+                android:textColor="@color/cl_faint_green"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/btnType2"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:buttonTint="@color/cl_faint_green"
+                android:text="@string/hindi"
+                android:textColor="@color/cl_faint_green"
+                android:textSize="16sp" />
+
+<!--            <RadioButton-->
+<!--                android:id="@+id/btnType3"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="48dp"-->
+<!--                android:layout_marginStart="16dp"-->
+<!--                android:buttonTint="@color/cl_faint_green"-->
+<!--                android:text="@string/marathi"-->
+<!--                android:textColor="@color/cl_faint_green"-->
+<!--                android:textSize="16sp" />-->
+        </RadioGroup>
+
+
         <Button
             android:id="@+id/btnLogout"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/gradient"
+            android:backgroundTint="@null"
+            android:fontFamily="@font/poppins_semibold"
+            android:padding="10dp"
+            android:text="@string/logout"
+            android:textAllCaps="false"
+            android:textSize="17dp" />
+
 
     </LinearLayout>
 

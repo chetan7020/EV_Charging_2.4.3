@@ -5,14 +5,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/cl_black"
-    android:gravity="center"
+    android:padding="20dp"
     android:orientation="vertical"
     tools:context=".EnergySold.EnergySoldChartActivity">
 
-    <com.github.mikephil.charting.charts.LineChart
-        android:id="@+id/lcChat"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="300dp" />
+        android:layout_height="48dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/bussiness_analytics"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="3dp"
+        android:textColor="@color/cl_green"
+        android:textSize="30sp" />
+
+
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        app:cardCornerRadius="15dp"
+        android:layout_height="300dp">
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/lcChat"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+
+            android:background="@color/white"
+            />
+    </androidx.cardview.widget.CardView>
+
 
     <TextView
         android:id="@+id/type"
@@ -23,9 +46,9 @@
         android:layout_marginTop="15dp"
         android:fontFamily="@font/poppins"
         android:singleLine="true"
-        android:text="Select the filter which you wnat to apply"
-        android:textAllCaps="true"
-        android:textColor="@color/white"
+        android:text="@string/select_the_filter_which_you_wnat_to_apply"
+
+        android:textColor="@color/cl_faint_green"
         android:textSize="12sp"
         android:textStyle="bold" />
 
@@ -37,22 +60,30 @@
         <CheckBox
             android:id="@+id/btnAmount"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Amount"
+            android:layout_height="48dp"
+            android:backgroundTint="@color/cl_faint_green"
+            android:buttonTint="@color/cl_faint_green"
+            android:text="@string/amount"
             android:textColor="@color/white" />
 
         <CheckBox
             android:id="@+id/btnEnergySold"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Energy Sold"
+            android:backgroundTint="@color/cl_faint_green"
+            android:buttonTint="@color/cl_faint_green"
+
+            android:layout_height="48dp"
+            android:text="@string/energy_sold"
             android:textColor="@color/white" />
 
         <CheckBox
             android:id="@+id/btnUserServed"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="User Served"
+            android:backgroundTint="@color/cl_faint_green"
+            android:buttonTint="@color/cl_faint_green"
+
+            android:layout_height="48dp"
+            android:text="@string/user_served"
             android:textColor="@color/white" />
 
     </LinearLayout>

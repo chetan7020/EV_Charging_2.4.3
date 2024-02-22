@@ -22,7 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_bold"
-                android:text="Register New \nAccount"
+                android:text="@string/register_new_naccount"
                 android:layout_marginTop="20dp"
                 android:textColor="@color/cl_green"
                 android:textSize="30dp" />
@@ -40,7 +40,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/edittext_background"
                     android:fontFamily="@font/poppins_medium"
-                    android:hint="Name"
+                    android:hint="@string/name"
                     android:padding="15dp"
                     android:singleLine="true"
                     android:textColor="@color/white"
@@ -54,7 +54,7 @@
                     android:layout_marginTop="20dp"
                     android:background="@drawable/edittext_background"
                     android:fontFamily="@font/poppins_medium"
-                    android:hint="Station Name"
+                    android:hint="@string/station_name"
                     android:padding="15dp"
                     android:singleLine="true"
                     android:textColor="@color/white"
@@ -68,7 +68,7 @@
                     android:layout_marginTop="20dp"
                     android:background="@drawable/edittext_background"
                     android:fontFamily="@font/poppins_medium"
-                    android:hint="Charging Points"
+                    android:hint="@string/charging_points"
                     android:inputType="number"
                     android:padding="15dp"
                     android:singleLine="true"
@@ -83,7 +83,7 @@
                     android:layout_marginTop="20dp"
                     android:background="@drawable/edittext_background"
                     android:fontFamily="@font/poppins_medium"
-                    android:hint="Pricing"
+                    android:hint="@string/pricing"
                     android:inputType="number"
                     android:padding="15dp"
                     android:singleLine="true"
@@ -99,7 +99,7 @@
                     android:layout_marginTop="15dp"
                     android:fontFamily="@font/poppins"
                     android:singleLine="true"
-                    android:text="Select the charging connector type"
+                    android:text="@string/select_the_charging_connector_type"
                     android:textAllCaps="true"
                     android:textColor="@color/cl_faint_green"
                     android:textSize="12sp"
@@ -116,21 +116,21 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/cl_faint_green"
-                        android:text="Type 1" />
+                        android:text="@string/type_1" />
 
                     <CheckBox
                         android:id="@+id/cbT2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/cl_faint_green"
-                        android:text="Type 2" />
+                        android:text="@string/type_2" />
 
                     <CheckBox
                         android:id="@+id/cbT3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/cl_faint_green"
-                        android:text="Type 3" />
+                        android:text="@string/type_3" />
 
                 </LinearLayout>
 
@@ -144,11 +144,10 @@
                         android:id="@+id/et_address"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Address"
+                        android:hint="@string/address"
                         android:padding="15dp"
                         android:singleLine="true"
                         android:layout_weight="2"
-                        android:inputType="textPassword"
                         android:textColor="@color/white"
                         android:fontFamily="@font/poppins_medium"
                         android:textColorHint="@color/white"
@@ -175,7 +174,7 @@
                     android:layout_marginTop="20dp"
                     android:background="@drawable/edittext_background"
                     android:fontFamily="@font/poppins_medium"
-                    android:hint="Email"
+                    android:hint="@string/email"
                     android:padding="15dp"
                     android:singleLine="true"
                     android:textColor="@color/white"
@@ -189,7 +188,7 @@
                     android:layout_marginTop="20dp"
                     android:background="@drawable/edittext_background"
                     android:fontFamily="@font/poppins_medium"
-                    android:hint="Password"
+                    android:hint="@string/password"
                     android:inputType="textPassword"
                     android:padding="15dp"
                     android:singleLine="true"
@@ -209,7 +208,7 @@
                 android:backgroundTint="@null"
                 android:fontFamily="@font/poppins_semibold"
                 android:padding="10dp"
-                android:text="Register"
+                android:text="@string/register"
                 android:textAllCaps="false"
                 android:textSize="17dp" />
 
@@ -225,7 +224,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Already have an account ?"
+                    android:text="@string/already_have_an_account"
                     android:textColor="@color/white"
                     android:textSize="15dp" />
 
@@ -236,7 +235,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_semibold"
                     android:gravity="center"
-                    android:text="Login"
+                    android:text="@string/login"
                     android:textColor="@color/cl_faint_green"
                     android:textSize="15dp" />
 

@@ -56,7 +56,7 @@ public class AddEnergySoldActivity extends AppCompatActivity {
                         if (doc.exists()) {
                             pre_EnergySold = doc.toObject(EnergySold.class);
                         } else {
-                            Toast.makeText(AddEnergySoldActivity.this, "Doc do not Exists", Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(AddEnergySoldActivity.this, "Doc do not Exists", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }).addOnFailureListener(new OnFailureListener() {
@@ -95,7 +95,7 @@ public class AddEnergySoldActivity extends AppCompatActivity {
                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void unused) {
-                            Toast.makeText(AddEnergySoldActivity.this, "Energy Added", Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(AddEnergySoldActivity.this, "Energy Added", Toast.LENGTH_SHORT).show();
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
@@ -115,7 +115,7 @@ public class AddEnergySoldActivity extends AppCompatActivity {
                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void unused) {
-                            Toast.makeText(AddEnergySoldActivity.this, "ES Added", Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(AddEnergySoldActivity.this, "ES Added", Toast.LENGTH_SHORT).show();
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override

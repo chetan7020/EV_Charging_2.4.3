@@ -35,7 +35,6 @@
                     android:fontFamily="@font/poppins"
                     android:maxLines="1"
                     android:paddingLeft="10dp"
-                    android:text="Rohit Nandagawali"
                     android:textColor="@color/white"
                     android:textSize="17dp" />
 
@@ -58,7 +57,6 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="+200"
                     android:textColor="@color/cl_green"
                     android:textSize="19dp" />
 

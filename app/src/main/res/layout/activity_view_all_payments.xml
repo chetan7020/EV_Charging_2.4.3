@@ -4,14 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cl_faint_green"
+    android:background="@color/cl_black"
     tools:context=".payment.ViewAllPaymentsActivity">
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@color/cl_faint_green" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -33,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_semibold"
                 android:paddingTop="10dp"
-                android:text="Payments"
+                android:text="@string/payments"
                 android:textColor="@color/white"
                 android:textSize="25dp" />
 
@@ -63,7 +57,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins"
-                        android:text="MY BALANCE"
+                        android:text="@string/my_balance"
                         android:textColor="@color/white"
                         android:textSize="18dp" />
 
@@ -104,7 +98,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="10dp"
-                    android:text="Payment History"
+                    android:text="@string/payment_history"
                     android:textColor="@color/white"
                     android:textSize="22dp" />
 

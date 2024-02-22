@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/poppins_bold"
-        android:text="Lets sign in "
+        android:text="@string/login"
         android:textColor="@color/cl_green"
         android:textSize="30dp" />
 
@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_medium"
-        android:text="Welcome back,\nYou have been missed "
+        android:text="@string/welcome_back"
         android:textColor="@color/cl_faint_green"
         android:textSize="17dp" />
 
@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/edittext_background"
             android:fontFamily="@font/poppins_medium"
-            android:hint="Email"
+            android:hint="@string/email"
             android:padding="15dp"
             android:singleLine="true"
             android:textColor="@color/white"
@@ -55,7 +55,7 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/edittext_background"
             android:fontFamily="@font/poppins_medium"
-            android:hint="Password"
+            android:hint="@string/password"
             android:inputType="textPassword"
             android:padding="15dp"
             android:singleLine="true"
@@ -75,7 +75,7 @@
         android:backgroundTint="@null"
         android:fontFamily="@font/poppins_semibold"
         android:padding="10dp"
-        android:text="Login"
+        android:text="@string/login"
         android:textAllCaps="false"
         android:textSize="17dp" />
 
@@ -91,7 +91,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Dont have an account ?"
+            android:text="@string/dont_have_an_account"
             android:textColor="@color/white"
             android:textSize="15dp" />
 
@@ -102,7 +102,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_semibold"
             android:gravity="center"
-            android:text="Register Now"
+            android:text="@string/register_now"
             android:textColor="@color/cl_faint_green"
             android:textSize="15dp" />
 

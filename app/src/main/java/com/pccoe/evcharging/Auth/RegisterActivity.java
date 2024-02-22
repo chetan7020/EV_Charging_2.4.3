@@ -76,7 +76,7 @@ public class RegisterActivity extends AppCompatActivity {
                 if (check() == 1) {
                     createNew();
                 } else {
-                    Toast.makeText(RegisterActivity.this, "Mandatory", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this, "All Fields are Mandatory", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -89,7 +89,6 @@ public class RegisterActivity extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                     @Override
                     public void onSuccess(AuthResult authResult) {
-                        Toast.makeText(RegisterActivity.this, "Registered", Toast.LENGTH_SHORT).show();
                         firebaseFirestore
                                 .collection("Owner")
                                 .document(owner_email)
@@ -97,7 +96,8 @@ public class RegisterActivity extends AppCompatActivity {
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void unused) {
-                                        Toast.makeText(RegisterActivity.this, "Data Entered", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(RegisterActivity.this, "Registered", Toast.LENGTH_SHORT).show();
+//                                        Toast.makeText(RegisterActivity.this, "Data Entered", Toast.LENGTH_SHORT).show();
                                         addChargingPoints();
                                     }
                                 }).addOnFailureListener(new OnFailureListener() {
@@ -137,7 +137,7 @@ public class RegisterActivity extends AppCompatActivity {
         batch.commit().addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
-                Toast.makeText(RegisterActivity.this, "Charging Points Created", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(RegisterActivity.this, "Charging Points Created", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(RegisterActivity.this, MainActivity.class));
                 finish();
             }
@@ -205,7 +205,7 @@ public class RegisterActivity extends AppCompatActivity {
         charging_point_com_type_2 = mani_com_type_2;
         charging_point_com_type_3 = mani_com_type_3;
 
-        owner_location = new GeoPoint(-20, 20);
+        owner_location = new GeoPoint(18.455799, 73.866631);
 
         if (owner_email.equals("")) owner_email = "-1";
         if (owner_pass.equals("")) owner_pass = "-1";

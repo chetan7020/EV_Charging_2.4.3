@@ -3,11 +3,17 @@ package com.pccoe.evcharging;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -25,6 +31,12 @@ import java.util.Locale;
 
 public class ProfileActivity extends AppCompatActivity {
 
+    //    int e=1, h=0;
+    String currentLanguage = "en";
+    Locale myLocale;
+    private Context context;
+    private Resources resources;
+    String currentLang;
     private ActivityProfileBinding binding;
     Owner owner;
     private FirebaseAuth firebaseAuth;
@@ -38,7 +50,45 @@ public class ProfileActivity extends AppCompatActivity {
 
         init();
 
+        currentLanguage = getIntent().getStringExtra(currentLang);
+
+//        setLocale("en");
+//
+//        switch(LocaleHelper.getLanguage(ProfileActivity.this))
+//        {
+//            case "en":
+//                binding.btnType1.setChecked(true);
+//                break;
+//            case "hi":
+//                binding.btnType2.setChecked(true);
+//                break;
+//            default:
+//                System.out.println("no match");
+//        }
+
         getData();
+
+        binding.rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                RadioButton radioButton = findViewById(i);
+
+                String ln = "";
+
+                String s = radioButton.getText().toString();
+
+
+                if (s.equals("English")) ln = "en";
+                if (s.equals("Hindi")) ln = "hi";
+//                if (s.equals("English")) ln = "en";
+
+
+                setLocale(ln);
+
+                context = LocaleHelper.setLocale(ProfileActivity.this, ln);
+                resources = getResources();
+            }
+        });
 
         binding.btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,6 +101,23 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
     }
 
+    public void setLocale(String localeName) {
+        if (!localeName.equals(currentLanguage)) {
+            Context context = LocaleHelper.setLocale(ProfileActivity.this, localeName);
+            //Resources resources = context.getResources();
+            myLocale = new Locale(localeName);
+            Resources res = context.getResources();
+            DisplayMetrics dm = res.getDisplayMetrics();
+            Configuration conf = res.getConfiguration();
+            conf.locale = myLocale;
+            res.updateConfiguration(conf, dm);
+            Intent refresh = new Intent(ProfileActivity.this, MainActivity.class);
+            refresh.putExtra(currentLang, localeName);
+            startActivity(refresh);
+        } else {
+            //Toast.makeText(getActivity(), "Language already selected!", Toast.LENGTH_SHORT).show();
+        }
+    }
     private String getAddress() {
 
         String add = "";
