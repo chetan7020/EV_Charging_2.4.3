@@ -66,12 +66,13 @@ public class EVStationAdapter extends RecyclerView.Adapter<EVStationAdapter.Lead
 
 //        holder.ratingBar.setRating((float) dataholder2.get(position).getRat_rating());
         holder.tvID.setText(dataholder2.get(position).getEvs_id());
+        holder.tvType.setText("Type " + dataholder2.get(position).getType());
         if(dataholder2.get(position).getEvs_available()==1){
             holder.tvAvailable.setText("Available");
         }else{
             holder.tvAvailable.setText("Not Available");
         }
-        holder.tvEnergy.setText(Integer.toString(dataholder2.get(position).getEvs_energy()));
+        holder.tvEnergy.setText("Energy : " + Integer.toString(dataholder2.get(position).getEvs_energy()));
     }
 
     @Override
@@ -83,7 +84,7 @@ public class EVStationAdapter extends RecyclerView.Adapter<EVStationAdapter.Lead
 
     class LeadData extends RecyclerView.ViewHolder {
 //        RatingBar ratingBar;
-        TextView tvID, tvAvailable, tvEnergy;
+        TextView tvID, tvAvailable, tvEnergy, tvType;
 
         CardView cardView;
 
@@ -93,6 +94,7 @@ public class EVStationAdapter extends RecyclerView.Adapter<EVStationAdapter.Lead
 
 //            ratingBar = itemView.findViewById(R.id.ratingBar);
             tvID = itemView.findViewById(R.id.tvID);
+            tvType = itemView.findViewById(R.id.tvType);
             tvAvailable = itemView.findViewById(R.id.tvAvailable);
             tvEnergy = itemView.findViewById(R.id.tvEnergy);
 

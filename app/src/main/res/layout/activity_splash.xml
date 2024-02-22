@@ -22,7 +22,7 @@
         android:layout_gravity="center_horizontal"
         android:fontFamily="@font/poppins_bold"
         android:gravity="center_horizontal"
-        android:text="EVCharge"
+        android:text="@string/evcharge"
         android:textColor="@color/cl_faint_green"
         android:textSize="30sp" />
 

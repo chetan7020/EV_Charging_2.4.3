@@ -29,7 +29,6 @@ public class ViewAllPaymentsActivity extends AppCompatActivity {
     int ttl=0;
     private PaymentAdapter dishAdapter;
     LinearLayoutManager layoutManager;
-//    List<Payment> ratings;
     private ActivityViewAllPaymentsBinding binding;
     private List<Payment> payments;
     private FirebaseAuth firebaseAuth;
@@ -67,7 +66,7 @@ public class ViewAllPaymentsActivity extends AppCompatActivity {
                             ttl+=(i.getPayment_amount()*30);
                         }
 
-                        Toast.makeText(ViewAllPaymentsActivity.this, ""+ Integer.toString(payments.size()), Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(ViewAllPaymentsActivity.this, ""+ Integer.toString(payments.size()), Toast.LENGTH_SHORT).show();
 
                         dishAdapter = new PaymentAdapter(payments, ViewAllPaymentsActivity.this);
                         binding.rv.setAdapter(dishAdapter);

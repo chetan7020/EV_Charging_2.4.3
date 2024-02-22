@@ -62,7 +62,8 @@ public class AddEVStationActivity extends AppCompatActivity {
                 if (check() == 1) {
                     addEVStation();
                 } else {
-                    Toast.makeText(AddEVStationActivity.this, "Mandatory", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddEVStationActivity.this, "All Fields are " +
+                            "Mandatory", Toast.LENGTH_SHORT).show();
                 }
             }
         });
